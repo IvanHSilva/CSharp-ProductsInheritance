@@ -15,8 +15,10 @@ namespace ProductsInheritance.Entities {
         }
 
         // Methods
-        public override string ToString() {
-            return base.ToString() + $"(Data de fabricação: {ManufactureDate.ToString("dd/MM/yyyy")})";
+        public override string PriceTag() {
+            string tag = $"{Name} $ {Price.ToString("F2", CultureInfo.InvariantCulture)}";
+            tag += $" (Data de fabricação: {ManufactureDate:dd/MM/yyyy})";
+            return tag;
         }
     }
 }
